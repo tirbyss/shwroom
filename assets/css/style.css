@@ -213,18 +213,18 @@ h6 {
   max-width: 600px;
 }
 
-section .bigbox:nth-child(1) {
+.fir {
   position: relative;
   margin: 5vh 15vh 10vh 0;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
-section .bigbox:nth-child(1) .txt {
+.fir .txt {
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   margin-right: 0;
 }
-section .bigbox:nth-child(1) img.hero {
+.fir img.hero {
   width: 115vh;
   position: absolute;
   left: -20vh;
@@ -232,21 +232,25 @@ section .bigbox:nth-child(1) img.hero {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
-section .bigbox:nth-child(1) .sidetxt {
+.fir .sidetxt {
   float: right;
   text-align: right;
 }
+.fir .sidetxt h6 {
+  color: white;
+  margin: 30px 30px 0 0;
+}
 
-section .bigbox:nth-child(2) {
+.sec {
   margin: 5vh 0 10vh 15vh;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 }
-section .bigbox:nth-child(2) .txt {
+.sec .txt {
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
-section .bigbox:nth-child(2) img.hero {
+.sec img.hero {
   max-width: 115vh;
   position: relative;
   right: -40%;
@@ -397,7 +401,7 @@ main .boxevent:nth-child(4) {
   width: fit-content;
   display: flex;
   border-radius: 10px;
-  margin-left: 50px;
+  margin-left: 10vh;
 }
 .box .lifo {
   padding: 20px;

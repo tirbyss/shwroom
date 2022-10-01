@@ -184,7 +184,7 @@ h6{
         max-width: 600px;
     }
 }
-section .bigbox:nth-child(1){
+.fir{
     position: relative;
     .txt{
         border-bottom-left-radius: 10px;
@@ -205,9 +205,13 @@ section .bigbox:nth-child(1){
     .sidetxt{
         float: right;
         text-align: right;
+        h6{
+            color: white;
+            margin: 30px 30px 0 0 ;
+        }
     }
 }
-section .bigbox:nth-child(2){
+.sec{
     .txt{
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
@@ -371,7 +375,7 @@ main{
     width: fit-content;
     display: flex;
     border-radius: 10px;
-    margin-left: 50px;
+    margin-left: 10vh;
     .lifo{
         padding: 20px;
         width: 25vh;
