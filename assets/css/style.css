@@ -32,6 +32,13 @@
 }
 .sidebar .logo {
   margin-bottom: 20px;
+  padding: 10px;
+}
+.sidebar .logo a {
+  color: white;
+}
+.sidebar .menu a.activate {
+  background-color: #E2A03D;
 }
 .sidebar .menu {
   display: flex;
@@ -40,6 +47,7 @@
 }
 .sidebar .menu a {
   margin: 10px 5px 10px 25px;
+  color: white;
 }
 
 .container {
@@ -52,6 +60,29 @@
   background-color: grey;
   padding: 50px;
   width: 100%;
+}
+.for section .scroll {
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.for section .scroll a {
+  float: left;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5vh 1vh;
+  font-size: 12px;
+  margin: 30px 0px;
+  max-width: 13vh;
+}
+.for .innbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.for .box {
+  margin: 2vh auto;
 }
 
 input[type=text], ::placeholder {

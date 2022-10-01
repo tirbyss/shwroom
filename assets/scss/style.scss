@@ -33,11 +33,19 @@ $primary: #181818;
     justify-content: flex-start;
     .logo{
         margin-bottom: 20px;
+        padding: 10px;
+        a{
+            color: white;
+        }
+    }
+    .menu a.activate{
+        background-color: #E2A03D
     }
     .menu{
         @include flexbox(column);
         a{
             margin: 10px 5px 10px 25px;
+            color: white;
         }
     }
 }
@@ -50,6 +58,26 @@ $primary: #181818;
     background-color: grey;
     padding: 50px;
     width: 100%;
+    section .scroll{
+        overflow: visible;
+        @include flexbox(column);
+        a{
+            float: left;
+            color: white;
+            border: 1px solid white;
+            padding: 0.5vh 1vh;
+            font-size: 12px;
+            margin: 30px 0px;
+            max-width: 13vh
+        }
+    }
+    .innbox{
+        @include flexbox(row);
+    }
+    .box{
+        margin: 2vh auto;
+        
+    }
 }
 input[type="text"], ::placeholder{
     border: none;
