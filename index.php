@@ -1,3 +1,11 @@
+<?php include "koneksi.php"; 
+
+$query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP BY id DESC LIMIT 3");
+
+// var_dump($query);
+// die;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,23 +29,29 @@
             </div>            
         </div>
     </nav>
+
+    <?php 
+    $no = 1;
+
+    while($data = mysqli_fetch_array($query)) :
+    ?>
     <section>
+        <!-- hero image -->
+        <?php if($no % 2) :?>
         <div class="bigbox fir">
-                <img class="hero" src="assets/img/Product/image 1.png" alt="">
-                <div class="sidetxt">
-                    <img class="txt" src="assets/img/Product/Huracán_logo 2.png" alt="">
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eum labore ut facere eveniet. Dolores nostrum numquam adipisci saepe ex laboriosam, libero non provident maxime eveniet harum ab quos? Provident!</h5>
-                </div>
+            <?php else :?>
+                <div class="bigbox sec">
+            <?php endif; ?>
+            <div class="sidetxt">
+                <img class="txt" src="img/<?=$data['lgo_img']?>" alt="">
+                <h6><?=$data['deskripsi']?></h5>
             </div>
-            <div class="bigbox sec">
-                <div class="sidetxt">
-                    <img class="txt" id="car" src="assets/img/Product/text_urus.png" alt="">
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eum labore ut facere eveniet. Dolores nostrum numquam adipisci saepe ex laboriosam, libero non provident maxime eveniet harum ab quos? Provident!</h5>
-                </div>
-                <img class="hero" src="assets/img/Product/image2.png" alt="">
+            <img class="hero" src="img/<?=$data['img']?>" alt="">
             </div>
         </div>
     </section>
+    <?php $no++; endwhile ?>
+ 
     <div class="sli">
         <div class="whi">
             <h3>Update Info</h2>
@@ -137,46 +151,25 @@
     <br><br><br><br><br><br><br><br>
     <section>
         <div class="scroll">
+            <?php 
+            $i = 1;
+
+            $result = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP BY id DESC");
+
+            while($tampil = mysqli_fetch_array($result)) :
+            ?>
             <div class="box">
                 <div class="lifo">
-                    <h2>Huracan Tecnica</h2>
-                    <h6>Most people in Florida buy HURACAN</h6>
+                    <h2><?=$tampil['judul']?></h2>
+                    <h6>Most people in Florida buy <?=$tampil['judul']?></h6>
                     <a href="">Learn More</a>
                 </div>
                 <div class="libo">
-                    <img src="assets/img/Product/image 1.png" alt="">
+                    <img src="img/<?=$tampil['img']?>" alt="">
                 </div>
             </div>
-            <div class="box">
-                <div class="lifo">
-                    <h2>Huracan Tecnica</h2>
-                    <h6>Most people in Florida buy HURACAN lorem</h6>
-                    <a href="">Learn More</a>
-                </div>
-                <div class="libo">
-                    <img src="assets/img/Product/image 1.png" alt="">
-                </div>
-            </div>
-            <div class="box">
-                <div class="lifo">
-                    <h2>Huracan Tecnica</h2>
-                    <h6>Most people in Florida buy HURACAN</h6>
-                    <a href="">Learn More</a>
-                </div>
-                <div class="libo">
-                    <img src="assets/img/Product/image 1.png" alt="">
-                </div>
-            </div>
-            <div class="box">
-                <div class="lifo">
-                    <h2>Huracan Tecnica</h2>
-                    <h6>Most people in Florida buy HURACAN</h6>
-                    <a href="">Learn More</a>
-                </div>
-                <div class="libo">
-                    <img src="assets/img/Product/image 1.png" alt="">
-                </div>
-            </div>
+
+            <?php $i++; endwhile ?>
         </div>
     </section>
     <footer>
